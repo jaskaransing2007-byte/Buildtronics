@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skilio - Exchange Skills, Empower Learning</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts - Using distinctive typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Success Toast Notification -->
+    <div id="successToast" class="toast">
+        <div class="toast-content">
+            <svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M20 6L9 17l-5-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="toast-message">Task completed successfully!</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <h1>SKILIO</h1>
+                <p class="tagline">Where Skills Meet Opportunity</p>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#profile" class="btn btn-profile" id="profileBtn" style="display: none;">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="8" r="4"/>
+                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
+                    </svg>
+                    <span>Profile</span>
+                </a>
+                <a href="#login" class="btn btn-outline" id="loginBtn">Login</a>
+                <a href="#signup" class="btn btn-primary" id="signupBtn">Sign Up</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Learn Any Skill.<br>
+                    <span class="highlight">Teach What You Know.</span>
+                </h1>
+                <p class="hero-description">
+                    The first platform where skills are currency. Exchange knowledge 1-on-1, 
+                    earn credits by teaching, and learn from real people—all without spending a dime.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#signup" class="btn btn-large btn-primary">Get Started Free</a>
+                    <a href="#how-it-works" class="btn btn-large btn-outline">See How It Works</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>10,000+</h3>
+                        <p>Active Learners</p>
+                    </div>
+                    <div class="stat">
+                        <h3>500+</h3>
+                        <p>Skills Available</p>
+                    </div>
+                    <div class="stat">
+                        <h3>50,000+</h3>
+                        <p>Sessions Completed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <h1 class="live-heading">SKIL I/O</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Features</span>
+                <h2 class="section-title">Everything You Need to Exchange Skills</h2>
+                <p class="section-description">
+                    Built for learners and teachers who believe knowledge should be accessible to everyone
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Smart Matching Algorithm</h3>
+                    <p>Our AI finds the perfect learning partner based on your skills, interests, and availability. No more endless searching.</p>
+                    <div class="feature-tag">Core Feature</div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>1-on-1 Focused Sessions</h3>
+                    <p>Short, intense learning exchanges designed for maximum knowledge transfer. Quality over quantity.</p>
+                    <div class="feature-tag">Core Feature</div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Skill Credits System</h3>
+                    <p>Earn credits by teaching others, spend them to learn new skills. Your knowledge has real value.</p>
+                    <div class="feature-tag">Core Feature</div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🚪</div>
+                    <h3>Grace Period Exit</h3>
+                    <p>Not clicking with your teacher? Leave within the first 10 minutes with a full refund. No awkwardness.</p>
+                    <div class="feature-tag">Safety First</div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>No Recording Policy</h3>
+                    <p>Complete privacy guaranteed. Sessions can't be recorded, ensuring comfort and authentic learning.</p>
+                    <div class="feature-tag">Privacy</div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Flexible Pricing</h3>
+                    <p>Set your own learning budget. Pay what you can afford. Everyone deserves access to education.</p>
+                    <div class="feature-tag">Inclusive</div>
+                </div>
+
+                <!-- Feature 7 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Beginner-Friendly</h3>
+                    <p>New users get free credits to start learning immediately. Give back to the community when you're ready.</p>
+                    <div class="feature-tag">Welcoming</div>
+                </div>
+
+                <!-- Feature 8 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Gamification & Rewards</h3>
+                    <p>Earn badges, maintain streaks, climb leaderboards. Make learning addictively fun.</p>
+                    <div class="feature-tag">Engagement</div>
+                </div>
+
+                <!-- Feature 9 -->
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>Ratings & Reviews</h3>
+                    <p>Build trust through transparent feedback. Find the best teachers based on real student experiences.</p>
+                    <div class="feature-tag">Trust & Safety</div>
+                </div>
+
+                <!-- Feature 10 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Verified Mentors</h3>
+                    <p>Certified expert teachers with proven track records. Premium quality instruction available.</p>
+                    <div class="feature-tag premium-tag">Premium</div>
+                </div>
+
+                <!-- Feature 11 -->
+                <div class="feature-card">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Secure & Encrypted</h3>
+                    <p>OAuth authentication, encrypted video sessions, and secure payment processing. Your data is safe.</p>
+                    <div class="feature-tag">Security</div>
+                </div>
+
+                <!-- Feature 12 -->
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Skill Profiles</h3>
+                    <p>Showcase what you know and what you want to learn. Create your unique learning identity.</p>
+                    <div class="feature-tag">Core Feature</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Simple Process</span>
+                <h2 class="section-title">How Skilio Works</h2>
+                <p class="section-description">
+                    Start learning and teaching in four easy steps
+                </p>
+            </div>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Create Your Profile</h3>
+                        <p>Sign up in seconds using Google or Microsoft. List skills you have and skills you want to learn.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="step-icon">📝</div>
+                    </div>
+                </div>
+
+                <div class="step step-reverse">
+                    <div class="step-visual">
+                        <div class="step-icon">🤝</div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Get Matched</h3>
+                        <p>Our algorithm finds the perfect learning partners based on mutual interests and skill levels.</p>
+                    </div>
+                    <div class="step-number">02</div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Start Learning</h3>
+                        <p>Book a 1-on-1 session, connect via video, and start your skill exchange. Use grace period if needed.</p>
+                    </div>
+                    <div class="step-visual">
+                        <div class="step-icon">🎓</div>
+                    </div>
+                </div>
+
+                <div class="step step-reverse">
+                    <div class="step-visual">
+                        <div class="step-icon">⭐</div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Earn & Grow</h3>
+                        <p>Rate your experience, earn credits by teaching, and unlock badges as you build your skill portfolio.</p>
+                    </div>
+                    <div class="step-number">04</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Pricing</span>
+                <h2 class="section-title">Choose Your Plan</h2>
+                <p class="section-description">
+                    Start free, upgrade when you need more
+                </p>
+            </div>
+
+            <div class="pricing-cards">
+                <!-- Free Plan -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3>Free</h3>
+                        <div class="plan-price">
+                            <span class="price">₹0</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ Skill-for-skill exchanges</li>
+                        <li>✓ 5 free credits to start</li>
+                        <li>✓ Earn unlimited credits by teaching</li>
+                        <li>✓ Basic matching algorithm</li>
+                        <li>✓ Grace period exit</li>
+                        <li>✓ Ratings & reviews</li>
+                        <li>✓ Secure video sessions</li>
+                    </ul>
+                    <a href="#signup" class="btn btn-outline btn-block">Get Started</a>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="plan-header">
+                        <h3>Premium</h3>
+                        <div class="plan-price">
+                            <span class="price">₹799</span>
+                            <span class="period">/month</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ Everything in Free</li>
+                        <li>✓ 20 bonus credits monthly</li>
+                        <li>✓ Priority matching</li>
+                        <li>✓ Advanced filters & search</li>
+                        <li>✓ Access to verified mentors</li>
+                        <li>✓ No platform fees on sessions</li>
+                        <li>✓ Profile badges</li>
+                        <li>✓ Analytics dashboard</li>
+                    </ul>
+                    <a href="#signup" class="btn btn-primary btn-block">Upgrade to Premium</a>
+                </div>
+
+
+            </div>
+
+            <div class="credits-info">
+                <h3>💳 About Credit System</h3>
+                <div class="credits-grid">
+                    <div class="credit-item">
+                        <h4>Earn Credits</h4>
+                        <p>Teach 1 hour = 5 credits earned</p>
+                    </div>
+                    <div class="credit-item">
+                        <h4>Spend Credits</h4>
+                        <p>Learn 1 hour = 3-5 credits (you set your budget)</p>
+                    </div>
+                    <div class="credit-item">
+                        <h4>Buy Credits</h4>
+                        <p>₹20 = 1 credit (if you run out)</p>
+                    </div>
+                    <div class="credit-item">
+                        <h4>Beginner Bonus</h4>
+                        <p>New users get 5 free credits to start</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust & Safety Section -->
+    <section class="trust-safety">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Trust & Safety</span>
+                <h2 class="section-title">Your Safety is Our Priority</h2>
+            </div>
+
+            <div class="safety-grid">
+                <div class="safety-item">
+                    <div class="safety-icon">⭐</div>
+                    <h4>Ratings & Reviews</h4>
+                    <p>Build credibility through transparent feedback from real students</p>
+                </div>
+                <div class="safety-item">
+                    <div class="safety-icon">🚨</div>
+                    <h4>Report System</h4>
+                    <p>Flag inappropriate behavior or low-quality teaching instantly</p>
+                </div>
+                <div class="safety-item">
+                    <div class="safety-icon">✅</div>
+                    <h4>Verified Mentors</h4>
+                    <p>Certified experts with proven track records and background checks</p>
+                </div>
+                <div class="safety-item">
+                    <div class="safety-icon">🔐</div>
+                    <h4>Secure Auth</h4>
+                    <p>OAuth login with Google/Microsoft - no password hassles</p>
+                </div>
+                <div class="safety-item">
+                    <div class="safety-icon">🔒</div>
+                    <h4>Encrypted Sessions</h4>
+                    <p>End-to-end encryption for all video calls and messages</p>
+                </div>
+                <div class="safety-item">
+                    <div class="safety-icon">🛡️</div>
+                    <h4>Privacy First</h4>
+                    <p>No recording policy ensures your comfort and confidentiality</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
+            <div class="modal-header">
+                <h2>Welcome Back</h2>
+                <p>Login to continue your learning journey</p>
+            </div>
+            <form class="auth-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <button type="button" class="btn btn-social google" onclick="socialLogin('Google')">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                    </svg>
+                    Continue with Google
+                </button>
+                <button type="button" class="btn btn-social microsoft" onclick="socialLogin('Microsoft')">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="#f35325" d="M1 1h10v10H1z"/>
+                        <path fill="#81bc06" d="M13 1h10v10H13z"/>
+                        <path fill="#05a6f0" d="M1 13h10v10H1z"/>
+                        <path fill="#ffba08" d="M13 13h10v10H13z"/>
+                    </svg>
+                    Continue with Microsoft
+                </button>
+            </form>
+            <p class="auth-switch">
+                Don't have an account? <a href="#signup" onclick="switchModal('loginModal', 'signupModal')">Sign up</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('signupModal')">&times;</button>
+            <div class="modal-header">
+                <h2>Join Skilio</h2>
+                <p>Start learning and teaching today</p>
+            </div>
+            <form class="auth-form" onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Create a strong password" required>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        <span>I agree to the Terms of Service and Privacy Policy</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <button type="button" class="btn btn-social google" onclick="socialLogin('Google')">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                        <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                        <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                        <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                    </svg>
+                    Sign up with Google
+                </button>
+                <button type="button" class="btn btn-social microsoft" onclick="socialLogin('Microsoft')">
+                    <svg viewBox="0 0 24 24" width="20" height="20">
+                        <path fill="#f35325" d="M1 1h10v10H1z"/>
+                        <path fill="#81bc06" d="M13 1h10v10H13z"/>
+                        <path fill="#05a6f0" d="M1 13h10v10H1z"/>
+                        <path fill="#ffba08" d="M13 13h10v10H13z"/>
+                    </svg>
+                    Sign up with Microsoft
+                </button>
+            </form>
+            <p class="auth-switch">
+                Already have an account? <a href="#login" onclick="switchModal('signupModal', 'loginModal')">Login</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Edit Interests Modal -->
+    <div id="editInterestsModal" class="modal">
+        <div class="modal-content modal-large">
+            <button class="modal-close" onclick="closeModal('editInterestsModal')">&times;</button>
+            <div class="modal-header">
+                <h2>Edit Your Interests & Skills</h2>
+                <p>Help us find the perfect learning partners for you</p>
+            </div>
+            <form class="interests-form" onsubmit="saveInterests(event)">
+                <div class="form-group">
+                    <label>🎓 Skills I Can Teach</label>
+                    <p class="form-hint">What skills can you share with others?</p>
+                    <input type="text" id="teachInput" placeholder="e.g., Web Development, Guitar, Photography">
+                    <button type="button" class="btn btn-outline btn-sm" onclick="addInterest('teach')">Add Skill</button>
+                    <div class="selected-tags" id="selectedTeach"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label>📚 Skills I Want to Learn</label>
+                    <p class="form-hint">What would you like to learn from others?</p>
+                    <input type="text" id="learnInput" placeholder="e.g., Spanish, Cooking, Data Science">
+                    <button type="button" class="btn btn-outline btn-sm" onclick="addInterest('learn')">Add Skill</button>
+                    <div class="selected-tags" id="selectedLearn"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label>💡 Other Interests & Hobbies</label>
+                    <p class="form-hint">Share your passions and connect with like-minded people</p>
+                    <input type="text" id="otherInput" placeholder="e.g., Gaming, Travel, Fitness">
+                    <button type="button" class="btn btn-outline btn-sm" onclick="addInterest('other')">Add Interest</button>
+                    <div class="selected-tags" id="selectedOther"></div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Save Interests</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Welcome Bonus Modal (Signup) -->
+    <div id="welcomeBonusModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="welcome-icon">🎉</div>
+                <h2>Congratulations!</h2>
+                <p>You have successfully signed up</p>
+            </div>
+            <div class="welcome-content">
+                <div class="greeting-message">
+                    <h3>Welcome to Skilio!</h3>
+                    <p>We're excited to have you join our community of learners and teachers.</p>
+                </div>
+                <div class="bonus-badge">
+                    <div class="bonus-amount">🎁 10 FREE CREDITS</div>
+                    <p>Added to your account!</p>
+                </div>
+                <div class="welcome-info">
+                    <h3>Congratulations on Your Bonus!</h3>
+                    <p>You've received <strong>10 free credits</strong> to start your learning journey on Skilio.</p>
+                    
+                    <div class="credit-info-box">
+                        <h4>💳 What can you do with credits?</h4>
+                        <p>• Learn new skills from expert teachers</p>
+                        <p>• Book 1-on-1 sessions</p>
+                        <p>• Earn more by teaching others!</p>
+                        <p class="small-text">Need more? Buy at just <strong>₹20 per credit</strong></p>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="closeModal('welcomeBonusModal')">Start Exploring</button>
+        </div>
+    </div>
+
+    <!-- Welcome Back Modal (Login) -->
+    <div id="welcomeBackModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="welcome-icon">👋</div>
+                <h2>Welcome Back!</h2>
+                <p>You have successfully signed in</p>
+            </div>
+            <div class="welcome-content">
+                <div class="greeting-message">
+                    <h3>Hello again!</h3>
+                    <p>Great to see you back on Skilio. Ready to continue your learning journey?</p>
+                </div>
+                <div class="bonus-badge">
+                    <div class="bonus-amount">🎁 10 FREE CREDITS</div>
+                    <p>Welcome back bonus added!</p>
+                </div>
+                <div class="welcome-info">
+                    <h3>Congratulations!</h3>
+                    <p>We've added <strong>10 free credits</strong> to your account to welcome you back!</p>
+                    
+                    <div class="credit-info-box">
+                        <h4>💡 Quick Tip</h4>
+                        <p>• Use your credits to learn new skills</p>
+                        <p>• Earn more credits by teaching</p>
+                        <p>• Buy additional credits at <strong>₹20 each</strong></p>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="closeModal('welcomeBackModal')">Continue Learning</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <h3>SKILIO</h3>
+                        <p class="tagline">Where Skills Meet Opportunity</p>
+                    </div>
+                    <p class="footer-description">
+                        The platform where knowledge is currency. Learn from anyone, teach everyone, 
+                        and build a world where skills are shared freely.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#community">Community</a></li>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#api">API Docs</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Skilio. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#twitter" aria-label="Twitter">𝕏</a>
+                    <a href="#linkedin" aria-label="LinkedIn">in</a>
+                    <a href="#facebook" aria-label="Facebook">f</a>
+                    <a href="#instagram" aria-label="Instagram">📷</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
