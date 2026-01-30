@@ -22,27 +22,17 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <h1>SKILIO</h1>
-                <p class="tagline">Where Skills Meet Opportunity</p>
-            </div>
-            <div class="nav-links">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#features" class="nav-link">Features</a>
-                <a href="#how-it-works" class="nav-link">How It Works</a>
-                <a href="#pricing" class="nav-link">Pricing</a>
-                <a href="#profile" class="btn btn-profile" id="profileBtn" style="display: none;">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="8" r="4"/>
-                        <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
-                    </svg>
-                    <span>Profile</span>
-                </a>
-                <a href="#login" class="btn btn-outline" id="loginBtn">Login</a>
-                <a href="#signup" class="btn btn-primary" id="signupBtn">Sign Up</a>
-            </div>
+   <div class="nav-links">
+    <a href="#home" class="nav-link active">Home</a>
+    <a href="#features" class="nav-link">Features</a>
+    <a href="#how-it-works" class="nav-link">How It Works</a>
+    <a href="#pricing" class="nav-link">Pricing</a>
+    <a href="profile.html" class="btn btn-outline" id="profileLink" style="display: none;">
+        👤 Profile
+    </a>
+    <a href="#login" class="btn btn-outline" id="loginBtn">Login</a>
+    <a href="#signup" class="btn btn-primary" id="signupBtn">Sign Up</a>
+</div>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <span></span>
                 <span></span>
@@ -84,7 +74,27 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <h1 class="live-heading">SKIL I/O</h1>
+                <div class="floating-card card-1">
+                    <div class="card-icon">🎨</div>
+                    <div class="card-text">
+                        <h4>Learn Design</h4>
+                        <p>3 credits</p>
+                    </div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">💻</div>
+                    <div class="card-text">
+                        <h4>Teach Coding</h4>
+                        <p>Earn 5 credits</p>
+                    </div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">🎸</div>
+                    <div class="card-text">
+                        <h4>Guitar Lessons</h4>
+                        <p>2 credits</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -276,7 +286,7 @@
                     <div class="plan-header">
                         <h3>Free</h3>
                         <div class="plan-price">
-                            <span class="price">₹0</span>
+                            <span class="price">$0</span>
                             <span class="period">/month</span>
                         </div>
                     </div>
@@ -298,7 +308,7 @@
                     <div class="plan-header">
                         <h3>Premium</h3>
                         <div class="plan-price">
-                            <span class="price">₹799</span>
+                            <span class="price">$9.99</span>
                             <span class="period">/month</span>
                         </div>
                     </div>
@@ -315,7 +325,25 @@
                     <a href="#signup" class="btn btn-primary btn-block">Upgrade to Premium</a>
                 </div>
 
-
+                <!-- Mentor Plan -->
+                <div class="pricing-card">
+                    <div class="plan-header">
+                        <h3>Verified Mentor</h3>
+                        <div class="plan-price">
+                            <span class="price">Custom</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ Everything in Premium</li>
+                        <li>✓ Set your own session fees</li>
+                        <li>✓ Verified mentor badge</li>
+                        <li>✓ 10-15% platform fee</li>
+                        <li>✓ Featured in search results</li>
+                        <li>✓ Dedicated support</li>
+                        <li>✓ Monthly payouts</li>
+                    </ul>
+                    <a href="#signup" class="btn btn-outline btn-block">Apply as Mentor</a>
+                </div>
             </div>
 
             <div class="credits-info">
@@ -331,7 +359,7 @@
                     </div>
                     <div class="credit-item">
                         <h4>Buy Credits</h4>
-                        <p>₹20 = 1 credit (if you run out)</p>
+                        <p>$1 = 1 credit (if you run out)</p>
                     </div>
                     <div class="credit-item">
                         <h4>Beginner Bonus</h4>
@@ -488,111 +516,6 @@
             <p class="auth-switch">
                 Already have an account? <a href="#login" onclick="switchModal('signupModal', 'loginModal')">Login</a>
             </p>
-        </div>
-    </div>
-
-    <!-- Edit Interests Modal -->
-    <div id="editInterestsModal" class="modal">
-        <div class="modal-content modal-large">
-            <button class="modal-close" onclick="closeModal('editInterestsModal')">&times;</button>
-            <div class="modal-header">
-                <h2>Edit Your Interests & Skills</h2>
-                <p>Help us find the perfect learning partners for you</p>
-            </div>
-            <form class="interests-form" onsubmit="saveInterests(event)">
-                <div class="form-group">
-                    <label>🎓 Skills I Can Teach</label>
-                    <p class="form-hint">What skills can you share with others?</p>
-                    <input type="text" id="teachInput" placeholder="e.g., Web Development, Guitar, Photography">
-                    <button type="button" class="btn btn-outline btn-sm" onclick="addInterest('teach')">Add Skill</button>
-                    <div class="selected-tags" id="selectedTeach"></div>
-                </div>
-                
-                <div class="form-group">
-                    <label>📚 Skills I Want to Learn</label>
-                    <p class="form-hint">What would you like to learn from others?</p>
-                    <input type="text" id="learnInput" placeholder="e.g., Spanish, Cooking, Data Science">
-                    <button type="button" class="btn btn-outline btn-sm" onclick="addInterest('learn')">Add Skill</button>
-                    <div class="selected-tags" id="selectedLearn"></div>
-                </div>
-                
-                <div class="form-group">
-                    <label>💡 Other Interests & Hobbies</label>
-                    <p class="form-hint">Share your passions and connect with like-minded people</p>
-                    <input type="text" id="otherInput" placeholder="e.g., Gaming, Travel, Fitness">
-                    <button type="button" class="btn btn-outline btn-sm" onclick="addInterest('other')">Add Interest</button>
-                    <div class="selected-tags" id="selectedOther"></div>
-                </div>
-                
-                <button type="submit" class="btn btn-primary btn-block">Save Interests</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Welcome Bonus Modal (Signup) -->
-    <div id="welcomeBonusModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="welcome-icon">🎉</div>
-                <h2>Congratulations!</h2>
-                <p>You have successfully signed up</p>
-            </div>
-            <div class="welcome-content">
-                <div class="greeting-message">
-                    <h3>Welcome to Skilio!</h3>
-                    <p>We're excited to have you join our community of learners and teachers.</p>
-                </div>
-                <div class="bonus-badge">
-                    <div class="bonus-amount">🎁 10 FREE CREDITS</div>
-                    <p>Added to your account!</p>
-                </div>
-                <div class="welcome-info">
-                    <h3>Congratulations on Your Bonus!</h3>
-                    <p>You've received <strong>10 free credits</strong> to start your learning journey on Skilio.</p>
-                    
-                    <div class="credit-info-box">
-                        <h4>💳 What can you do with credits?</h4>
-                        <p>• Learn new skills from expert teachers</p>
-                        <p>• Book 1-on-1 sessions</p>
-                        <p>• Earn more by teaching others!</p>
-                        <p class="small-text">Need more? Buy at just <strong>₹20 per credit</strong></p>
-                    </div>
-                </div>
-            </div>
-            <button class="btn btn-primary btn-block" onclick="closeModal('welcomeBonusModal')">Start Exploring</button>
-        </div>
-    </div>
-
-    <!-- Welcome Back Modal (Login) -->
-    <div id="welcomeBackModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="welcome-icon">👋</div>
-                <h2>Welcome Back!</h2>
-                <p>You have successfully signed in</p>
-            </div>
-            <div class="welcome-content">
-                <div class="greeting-message">
-                    <h3>Hello again!</h3>
-                    <p>Great to see you back on Skilio. Ready to continue your learning journey?</p>
-                </div>
-                <div class="bonus-badge">
-                    <div class="bonus-amount">🎁 10 FREE CREDITS</div>
-                    <p>Welcome back bonus added!</p>
-                </div>
-                <div class="welcome-info">
-                    <h3>Congratulations!</h3>
-                    <p>We've added <strong>10 free credits</strong> to your account to welcome you back!</p>
-                    
-                    <div class="credit-info-box">
-                        <h4>💡 Quick Tip</h4>
-                        <p>• Use your credits to learn new skills</p>
-                        <p>• Earn more credits by teaching</p>
-                        <p>• Buy additional credits at <strong>₹20 each</strong></p>
-                    </div>
-                </div>
-            </div>
-            <button class="btn btn-primary btn-block" onclick="closeModal('welcomeBackModal')">Continue Learning</button>
         </div>
     </div>
 
