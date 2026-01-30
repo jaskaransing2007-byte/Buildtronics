@@ -1,37 +1,32 @@
 /* ============================================
    SKILIO - Main Stylesheet
-   Dark & Purple Theme - Modern skill exchange design
+   A modern, distinctive design for skill exchange
    ============================================ */
 
 /* ============================================
    CSS VARIABLES - Easy customization
    ============================================ */
 :root {
-    /* Brand Colors - Dark & Purple Theme */
-    --primary: #A855F7;
-    --primary-dark: #9333EA;
-    --primary-light: #C084FC;
-    --secondary: #8B5CF6;
-    --secondary-dark: #7C3AED;
-    --accent: #EC4899;
+    /* Brand Colors - Bold and Energetic */
+    --primary: #FF6B35;
+    --primary-dark: #E5502A;
+    --primary-light: #FF8555;
+    --secondary: #004E89;
+    --secondary-dark: #003A65;
+    --accent: #FFD23F;
     
-    /* Dark Theme Colors */
-    --dark: #0F0F23;
-    --dark-2: #1A1A2E;
-    --dark-3: #16213E;
-    --dark-4: #2D2D44;
-    --gray: #9CA3AF;
-    --gray-light: #374151;
+    /* Neutrals */
+    --dark: #1A1A2E;
+    --dark-2: #16213E;
+    --gray: #6B7280;
+    --gray-light: #E5E7EB;
     --white: #FFFFFF;
-    --off-white: #F3F4F6;
-    --bg-dark: #0A0A1A;
-    --bg-card: #1E1E2E;
+    --off-white: #F9FAFB;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #A855F7 0%, #EC4899 100%);
-    --gradient-secondary: linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%);
-    --gradient-dark: linear-gradient(135deg, #0F0F23 0%, #1A1A2E 100%);
-    --gradient-card: linear-gradient(135deg, #1E1E2E 0%, #2D2D44 100%);
+    --gradient-primary: linear-gradient(135deg, #FF6B35 0%, #FF8555 100%);
+    --gradient-secondary: linear-gradient(135deg, #004E89 0%, #0077B6 100%);
+    --gradient-dark: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
     
     /* Typography */
     --font-display: 'Archivo Black', sans-serif;
@@ -52,12 +47,10 @@
     --radius-xl: 24px;
     
     /* Shadows */
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
-    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6);
-    --shadow-purple: 0 8px 32px rgba(168, 85, 247, 0.3);
-    --shadow-pink: 0 8px 32px rgba(236, 72, 153, 0.3);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.2);
     
     /* Transitions */
     --transition-fast: 0.2s ease;
@@ -81,8 +74,8 @@ html {
 
 body {
     font-family: var(--font-body);
-    color: var(--off-white);
-    background: var(--bg-dark);
+    color: var(--dark);
+    background: var(--white);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -93,7 +86,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     line-height: 1.2;
-    color: var(--white);
+    color: var(--dark);
 }
 
 h1 {
@@ -155,7 +148,7 @@ section {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.3);
     transform: translate(-50%, -50%);
     transition: width 0.6s, height 0.6s;
 }
@@ -168,7 +161,7 @@ section {
 .btn-primary {
     background: var(--gradient-primary);
     color: var(--white);
-    box-shadow: var(--shadow-purple);
+    box-shadow: var(--shadow-md);
 }
 
 .btn-primary:hover {
@@ -185,7 +178,6 @@ section {
 .btn-outline:hover {
     background: var(--primary);
     color: var(--white);
-    box-shadow: var(--shadow-purple);
 }
 
 .btn-large {
@@ -206,10 +198,9 @@ section {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(15, 15, 35, 0.95);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: var(--shadow-sm);
-    border-bottom: 1px solid rgba(168, 85, 247, 0.1);
     z-index: 1000;
     transition: all var(--transition-base);
 }
@@ -246,7 +237,7 @@ section {
 
 .nav-link {
     text-decoration: none;
-    color: var(--off-white);
+    color: var(--dark);
     font-weight: 500;
     transition: color var(--transition-fast);
     position: relative;
@@ -286,7 +277,7 @@ section {
     display: block;
     width: 25px;
     height: 3px;
-    background: var(--primary);
+    background: var(--dark);
     transition: all var(--transition-base);
 }
 
@@ -300,7 +291,6 @@ section {
     position: relative;
     padding-top: 80px;
     overflow: hidden;
-    background: var(--bg-dark);
 }
 
 .hero-bg {
@@ -310,9 +300,8 @@ section {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 50%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 50% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 78, 137, 0.1) 0%, transparent 50%);
     z-index: -1;
 }
 
@@ -340,7 +329,6 @@ section {
 
 .hero-title {
     margin-bottom: var(--spacing-md);
-    color: var(--white);
 }
 
 .highlight {
@@ -354,7 +342,6 @@ section {
     font-size: 1.25rem;
     margin-bottom: var(--spacing-lg);
     max-width: 600px;
-    color: var(--gray);
 }
 
 .hero-buttons {
@@ -387,11 +374,10 @@ section {
 
 .floating-card {
     position: absolute;
-    background: var(--gradient-card);
+    background: var(--white);
     padding: var(--spacing-md);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-purple);
-    border: 1px solid rgba(168, 85, 247, 0.2);
+    box-shadow: var(--shadow-lg);
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
@@ -432,7 +418,6 @@ section {
 .card-text h4 {
     font-size: 1rem;
     margin-bottom: 0.25rem;
-    color: var(--white);
 }
 
 .card-text p {
@@ -453,7 +438,7 @@ section {
 .section-tag {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background: rgba(168, 85, 247, 0.2);
+    background: rgba(255, 107, 53, 0.1);
     color: var(--primary);
     border-radius: var(--radius-sm);
     font-weight: 600;
@@ -461,12 +446,10 @@ section {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-bottom: var(--spacing-sm);
-    border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 .section-title {
     margin-bottom: var(--spacing-sm);
-    color: var(--white);
 }
 
 .section-description {
@@ -478,7 +461,7 @@ section {
    FEATURES SECTION
    ============================================ */
 .features {
-    background: var(--dark);
+    background: var(--off-white);
 }
 
 .features-grid {
@@ -488,11 +471,10 @@ section {
 }
 
 .feature-card {
-    background: var(--gradient-card);
+    background: var(--white);
     padding: var(--spacing-lg);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    border: 1px solid rgba(168, 85, 247, 0.1);
+    box-shadow: var(--shadow-sm);
     transition: all var(--transition-base);
     position: relative;
     overflow: hidden;
@@ -511,8 +493,7 @@ section {
 
 .feature-card:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-purple);
-    border-color: rgba(168, 85, 247, 0.4);
+    box-shadow: var(--shadow-lg);
 }
 
 .feature-card:hover::before {
@@ -527,40 +508,32 @@ section {
 .feature-card h3 {
     margin-bottom: var(--spacing-sm);
     font-size: 1.25rem;
-    color: var(--white);
 }
 
 .feature-card p {
     font-size: 1rem;
     margin-bottom: var(--spacing-md);
-    color: var(--gray);
 }
 
 .feature-tag {
     display: inline-block;
     padding: 0.375rem 0.75rem;
-    background: rgba(139, 92, 246, 0.2);
+    background: rgba(0, 78, 137, 0.1);
     color: var(--secondary);
     border-radius: var(--radius-sm);
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
-    border: 1px solid rgba(139, 92, 246, 0.3);
 }
 
 .premium-tag {
-    background: rgba(236, 72, 153, 0.2);
-    color: var(--accent);
-    border-color: rgba(236, 72, 153, 0.3);
+    background: rgba(255, 210, 63, 0.2);
+    color: #D4A500;
 }
 
 /* ============================================
    HOW IT WORKS SECTION
    ============================================ */
-.how-it-works {
-    background: var(--bg-dark);
-}
-
 .steps {
     max-width: 1000px;
     margin: 0 auto;
@@ -604,11 +577,6 @@ section {
 
 .step-content h3 {
     margin-bottom: var(--spacing-sm);
-    color: var(--white);
-}
-
-.step-content p {
-    color: var(--gray);
 }
 
 .step-visual {
@@ -626,14 +594,14 @@ section {
     align-items: center;
     justify-content: center;
     font-size: 3rem;
-    box-shadow: var(--shadow-purple);
+    box-shadow: var(--shadow-md);
 }
 
 /* ============================================
    PRICING SECTION
    ============================================ */
 .pricing {
-    background: var(--dark);
+    background: var(--off-white);
 }
 
 .pricing-cards {
@@ -644,25 +612,22 @@ section {
 }
 
 .pricing-card {
-    background: var(--gradient-card);
+    background: var(--white);
     border-radius: var(--radius-lg);
     padding: var(--spacing-xl);
     box-shadow: var(--shadow-md);
-    border: 1px solid rgba(168, 85, 247, 0.1);
     transition: all var(--transition-base);
     position: relative;
 }
 
 .pricing-card:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-purple);
-    border-color: rgba(168, 85, 247, 0.4);
+    box-shadow: var(--shadow-xl);
 }
 
 .pricing-card.popular {
-    border: 2px solid var(--primary);
+    border: 3px solid var(--primary);
     transform: scale(1.05);
-    box-shadow: var(--shadow-purple);
 }
 
 .popular-badge {
@@ -676,7 +641,7 @@ section {
     border-radius: var(--radius-md);
     font-weight: 600;
     font-size: 0.875rem;
-    box-shadow: var(--shadow-purple);
+    box-shadow: var(--shadow-md);
 }
 
 .plan-header {
@@ -688,7 +653,7 @@ section {
 
 .plan-header h3 {
     margin-bottom: var(--spacing-sm);
-    color: var(--white);
+    color: var(--dark);
 }
 
 .plan-price {
@@ -719,7 +684,7 @@ section {
 
 .plan-features li {
     padding: var(--spacing-sm) 0;
-    color: var(--off-white);
+    color: var(--dark);
     font-size: 1rem;
 }
 
@@ -728,11 +693,10 @@ section {
 }
 
 .credits-info {
-    background: var(--gradient-card);
+    background: var(--white);
     padding: var(--spacing-xl);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
-    border: 1px solid rgba(168, 85, 247, 0.1);
     max-width: 900px;
     margin: 0 auto;
 }
@@ -740,7 +704,6 @@ section {
 .credits-info h3 {
     text-align: center;
     margin-bottom: var(--spacing-lg);
-    color: var(--white);
 }
 
 .credits-grid {
@@ -752,9 +715,8 @@ section {
 .credit-item {
     text-align: center;
     padding: var(--spacing-md);
-    background: rgba(168, 85, 247, 0.1);
+    background: var(--off-white);
     border-radius: var(--radius-md);
-    border: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .credit-item h4 {
@@ -764,16 +726,11 @@ section {
 
 .credit-item p {
     font-size: 0.875rem;
-    color: var(--gray);
 }
 
 /* ============================================
    TRUST & SAFETY SECTION
    ============================================ */
-.trust-safety {
-    background: var(--bg-dark);
-}
-
 .safety-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -783,17 +740,15 @@ section {
 .safety-item {
     text-align: center;
     padding: var(--spacing-lg);
-    background: var(--gradient-card);
+    background: var(--white);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    border: 1px solid rgba(168, 85, 247, 0.1);
+    box-shadow: var(--shadow-sm);
     transition: all var(--transition-base);
 }
 
 .safety-item:hover {
     transform: translateY(-4px);
-    box-shadow: var(--shadow-purple);
-    border-color: rgba(168, 85, 247, 0.4);
+    box-shadow: var(--shadow-md);
 }
 
 .safety-icon {
@@ -803,12 +758,10 @@ section {
 
 .safety-item h4 {
     margin-bottom: var(--spacing-sm);
-    color: var(--white);
 }
 
 .safety-item p {
     font-size: 0.875rem;
-    color: var(--gray);
 }
 
 /* ============================================
@@ -821,8 +774,8 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
     z-index: 2000;
     align-items: center;
     justify-content: center;
@@ -844,7 +797,7 @@ section {
 }
 
 .modal-content {
-    background: var(--dark-2);
+    background: var(--white);
     border-radius: var(--radius-xl);
     max-width: 500px;
     width: 100%;
@@ -852,8 +805,6 @@ section {
     overflow-y: auto;
     position: relative;
     padding: var(--spacing-xl);
-    border: 1px solid rgba(168, 85, 247, 0.2);
-    box-shadow: var(--shadow-purple);
     animation: slideUp 0.3s ease;
 }
 
@@ -888,7 +839,7 @@ section {
 
 .modal-close:hover {
     background: var(--gray-light);
-    color: var(--primary);
+    color: var(--dark);
 }
 
 .modal-header {
@@ -898,12 +849,10 @@ section {
 
 .modal-header h2 {
     margin-bottom: var(--spacing-xs);
-    color: var(--white);
 }
 
 .modal-header p {
     font-size: 1rem;
-    color: var(--gray);
 }
 
 /* ============================================
@@ -923,7 +872,7 @@ section {
 
 .form-group label {
     font-weight: 600;
-    color: var(--off-white);
+    color: var(--dark);
     font-size: 0.875rem;
 }
 
@@ -933,15 +882,13 @@ section {
     border-radius: var(--radius-md);
     font-family: var(--font-body);
     font-size: 1rem;
-    background: var(--dark-3);
-    color: var(--white);
     transition: all var(--transition-fast);
 }
 
 .form-group input:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
 }
 
 .checkbox-label {
@@ -950,7 +897,6 @@ section {
     gap: var(--spacing-sm);
     font-weight: 400;
     cursor: pointer;
-    color: var(--gray);
 }
 
 .checkbox-label input {
@@ -980,9 +926,9 @@ section {
 }
 
 .btn-social {
-    background: var(--dark-3);
+    background: var(--white);
     border: 2px solid var(--gray-light);
-    color: var(--off-white);
+    color: var(--dark);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -990,8 +936,8 @@ section {
 }
 
 .btn-social:hover {
-    background: var(--dark-4);
-    border-color: var(--primary);
+    background: var(--off-white);
+    border-color: var(--gray);
     transform: none;
 }
 
@@ -999,7 +945,6 @@ section {
     text-align: center;
     margin-top: var(--spacing-md);
     font-size: 0.875rem;
-    color: var(--gray);
 }
 
 .auth-switch a {
@@ -1019,11 +964,11 @@ section {
     position: fixed;
     top: 100px;
     right: var(--spacing-md);
-    background: var(--gradient-primary);
+    background: #10B981;
     color: var(--white);
     padding: var(--spacing-md) var(--spacing-lg);
     border-radius: var(--radius-md);
-    box-shadow: var(--shadow-purple);
+    box-shadow: var(--shadow-lg);
     z-index: 3000;
     transform: translateX(400px);
     transition: transform var(--transition-base);
@@ -1053,9 +998,8 @@ section {
    ============================================ */
 .footer {
     background: var(--gradient-dark);
-    color: var(--off-white);
+    color: var(--white);
     padding: var(--spacing-2xl) 0 var(--spacing-lg);
-    border-top: 1px solid rgba(168, 85, 247, 0.1);
 }
 
 .footer-content {
@@ -1072,7 +1016,7 @@ section {
 }
 
 .footer-description {
-    color: var(--gray);
+    color: rgba(255, 255, 255, 0.7);
     margin-top: var(--spacing-sm);
 }
 
@@ -1085,13 +1029,13 @@ section {
 }
 
 .footer-section ul li a {
-    color: var(--gray);
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     transition: color var(--transition-fast);
 }
 
 .footer-section ul li a:hover {
-    color: var(--primary);
+    color: var(--white);
 }
 
 .footer-bottom {
@@ -1099,11 +1043,11 @@ section {
     justify-content: space-between;
     align-items: center;
     padding-top: var(--spacing-lg);
-    border-top: 1px solid rgba(168, 85, 247, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-bottom p {
-    color: var(--gray);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 0.875rem;
 }
 
@@ -1118,19 +1062,16 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(168, 85, 247, 0.2);
-    color: var(--primary);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
     border-radius: 50%;
     text-decoration: none;
-    border: 1px solid rgba(168, 85, 247, 0.3);
     transition: all var(--transition-fast);
 }
 
 .social-links a:hover {
     background: var(--primary);
-    color: var(--white);
     transform: translateY(-3px);
-    box-shadow: var(--shadow-purple);
 }
 
 /* ============================================
@@ -1145,11 +1086,10 @@ section {
         top: 100%;
         left: 0;
         right: 0;
-        background: var(--dark-2);
+        background: var(--white);
         flex-direction: column;
         padding: var(--spacing-lg);
         box-shadow: var(--shadow-md);
-        border-bottom: 1px solid rgba(168, 85, 247, 0.2);
     }
     
     .nav-links.active {
@@ -1305,52 +1245,6 @@ section {
 }
 
 /* ============================================
-   LIVE HEADING ANIMATION
-   ============================================ */
-.live-heading {
-    font-size: clamp(3rem, 8vw, 6rem);
-    font-family: 'Archivo Black', sans-serif;
-    background: linear-gradient(45deg, #8B5CF6, #A78BFA, #FF6B35);
-    background-size: 200% 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradientShift 3s ease-in-out infinite, fadeInUp 2s ease-out;
-    text-align: center;
-    margin: 0;
-    position: relative;
-}
-
-.live-heading::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #8B5CF6, #FF6B35);
-    animation: underlineExpand 2s ease-out 1s forwards;
-}
-
-@keyframes gradientShift {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-}
-
-@keyframes underlineExpand {
-    to {
-        width: 80%;
-    }
-}
-
-
-
-/* ============================================
    PRINT STYLES
    ============================================ */
 @media print {
@@ -1362,3 +1256,236 @@ section {
         display: none;
     }
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Skilio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Success Toast Notification -->
+    <div id="successToast" class="toast">
+        <div class="toast-content">
+            <svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M20 6L9 17l-5-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="toast-message">Success!</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>SKILIO</h1>
+                    <p class="tagline">Where Skills Meet Opportunity</p>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+                <a href="index.html#pricing" class="nav-link">Pricing</a>
+                <a href="profile.html" class="nav-link active">👤 Profile</a>
+                <button class="btn btn-outline" onclick="logout()">Logout</button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Profile Page Content -->
+    <main class="profile-page">
+        <div class="container">
+            <!-- Profile Header -->
+            <section class="profile-header-card">
+                <div class="profile-avatar-section">
+                    <img id="profileAvatar" class="profile-avatar" src="https://ui-avatars.com/api/?name=John+Doe&size=200&background=FF6B35&color=fff" alt="Profile Avatar">
+                    <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+                    <button class="btn btn-sm btn-outline" onclick="document.getElementById('avatarInput').click()">Change Photo</button>
+                </div>
+                <div class="profile-info-section">
+                    <h1 id="userName">John Doe</h1>
+                    <p class="user-email" id="userEmail">john.doe@example.com</p>
+                    <div class="profile-stats-grid">
+                        <div class="stat-card-profile">
+                            <div class="stat-number-profile" id="userCredits">10</div>
+                            <div class="stat-label-profile">Credits</div>
+                        </div>
+                        <div class="stat-card-profile">
+                            <div class="stat-number-profile" id="userSessions">0</div>
+                            <div class="stat-label-profile">Sessions</div>
+                        </div>
+                        <div class="stat-card-profile">
+                            <div class="stat-number-profile" id="userRating">5.0</div>
+                            <div class="stat-label-profile">Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Content Grid -->
+            <div class="profile-grid-layout">
+                <!-- Left Column: Skills & Interests -->
+                <div class="profile-main-content">
+                    <!-- Skills I Can Teach -->
+                    <section class="profile-card-section">
+                        <div class="card-header-section">
+                            <h2>🎓 Skills I Can Teach</h2>
+                            <button class="btn btn-sm btn-outline" onclick="openEditModal('teach')">Edit</button>
+                        </div>
+                        <div class="skills-display-container" id="teachSkillsContainer">
+                            <p class="empty-message">Add skills you can teach to start matching with learners!</p>
+                        </div>
+                    </section>
+
+                    <!-- Skills I Want to Learn -->
+                    <section class="profile-card-section">
+                        <div class="card-header-section">
+                            <h2>📚 Skills I Want to Learn</h2>
+                            <button class="btn btn-sm btn-outline" onclick="openEditModal('learn')">Edit</button>
+                        </div>
+                        <div class="skills-display-container" id="learnSkillsContainer">
+                            <p class="empty-message">Add skills you want to learn to find perfect teachers!</p>
+                        </div>
+                    </section>
+
+                    <!-- Other Interests -->
+                    <section class="profile-card-section">
+                        <div class="card-header-section">
+                            <h2>💡 Other Interests & Hobbies</h2>
+                            <button class="btn btn-sm btn-outline" onclick="openEditModal('interests')">Edit</button>
+                        </div>
+                        <div class="skills-display-container" id="interestsContainer">
+                            <p class="empty-message">Share your hobbies to connect with like-minded people!</p>
+                        </div>
+                    </section>
+
+                    <!-- AI Matchmaking Section -->
+                    <section class="profile-card-section matchmaking-card">
+                        <div class="card-header-section">
+                            <h2>🔍 AI-Powered Skill Matchmaking</h2>
+                        </div>
+                        
+                        <div class="search-bar-wrapper">
+                            <input 
+                                type="text" 
+                                id="skillSearchInput" 
+                                class="search-input-field" 
+                                placeholder="Search for skills you want to learn... (e.g., Guitar, Python, Spanish)"
+                            >
+                            <button class="btn btn-primary search-button" onclick="searchSkills()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="11" cy="11" r="8" stroke-width="2"/>
+                                    <path d="M21 21l-4.35-4.35" stroke-width="2"/>
+                                </svg>
+                                Search
+                            </button>
+                        </div>
+
+                        <div class="filter-buttons-wrapper">
+                            <button class="filter-button active" onclick="filterMatches('all')">All Matches</button>
+                            <button class="filter-button" onclick="filterMatches('best')">Best Match (70%+)</button>
+                            <button class="filter-button" onclick="filterMatches('verified')">Verified Only</button>
+                            <button class="filter-button" onclick="filterMatches('available')">Available Now</button>
+                        </div>
+
+                        <div id="matchesContainer" class="matches-display-container">
+                            <div class="empty-matches-state">
+                                <div class="empty-icon-large">🎯</div>
+                                <h3>Find Your Perfect Learning Match</h3>
+                                <p>Search for any skill above or click "Find All Matches" to see personalized recommendations based on your profile.</p>
+                                <button class="btn btn-primary" onclick="findAllMatches()">Find All Matches</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Column: Quick Actions & Info -->
+                <aside class="profile-sidebar-section">
+                    <div class="sidebar-card-wrapper">
+                        <h3>Quick Actions</h3>
+                        <div class="quick-actions-list">
+                            <button class="action-button" onclick="findAllMatches()">
+                                <span class="action-icon">🎯</span>
+                                <span>Find All Matches</span>
+                            </button>
+                            <button class="action-button" onclick="buyCredits()">
+                                <span class="action-icon">💳</span>
+                                <span>Buy Credits</span>
+                            </button>
+                            <button class="action-button" onclick="viewSessions()">
+                                <span class="action-icon">📅</span>
+                                <span>My Sessions</span>
+                            </button>
+                            <button class="action-button" onclick="openSettings()">
+                                <span class="action-icon">⚙️</span>
+                                <span>Settings</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-card-wrapper">
+                        <h3>💡 Pro Tips</h3>
+                        <ul class="tips-list-items">
+                            <li>Add at least 3 skills to get better matches</li>
+                            <li>Complete sessions to earn more credits</li>
+                            <li>Verified mentors have higher ratings</li>
+                            <li>Be specific when searching for skills</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card-wrapper credit-balance-card">
+                        <h3>Credit Balance</h3>
+                        <div class="credit-display-section">
+                            <span class="credit-amount-display" id="sidebarCredits">10</span>
+                            <span class="credit-label-display">Credits</span>
+                        </div>
+                        <p class="credit-info-text">1 Credit = $1</p>
+                        <button class="btn btn-primary btn-block" onclick="buyCredits()">Add Credits</button>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Edit Skills Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeEditModal()">&times;</button>
+            <div class="modal-header">
+                <h2 id="modalTitle">Edit Skills</h2>
+                <p id="modalDescription">Add or remove skills from your profile</p>
+            </div>
+            <div class="modal-body">
+                <div class="skill-input-wrapper">
+                    <input 
+                        type="text" 
+                        id="skillInput" 
+                        class="skill-input-field" 
+                        placeholder="Type a skill and press Enter"
+                    >
+                    <button class="btn btn-primary" onclick="addSkill()">Add</button>
+                </div>
+                <div id="skillTagsContainer" class="skill-tags-display"></div>
+            </div>
+            <div class="modal-footer-section">
+                <button class="btn btn-outline" onclick="closeEditModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="saveSkills()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
