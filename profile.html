@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Skilio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Success Toast Notification -->
+    <div id="successToast" class="toast">
+        <div class="toast-content">
+            <svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M20 6L9 17l-5-5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="toast-message">Success!</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>SKILIO</h1>
+                    <p class="tagline">Where Skills Meet Opportunity</p>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+                <a href="index.html#pricing" class="nav-link">Pricing</a>
+                <a href="profile.html" class="nav-link active">👤 Profile</a>
+                <button class="btn btn-outline" onclick="logout()">Logout</button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Profile Page Content -->
+    <main class="profile-page">
+        <div class="container">
+            <!-- Profile Header -->
+            <section class="profile-header-card">
+                <div class="profile-avatar-section">
+                    <img id="profileAvatar" class="profile-avatar" src="https://ui-avatars.com/api/?name=John+Doe&size=200&background=FF6B35&color=fff" alt="Profile Avatar">
+                    <input type="file" id="avatarInput" accept="image/*" style="display: none;">
+                    <button class="btn btn-sm btn-outline" onclick="document.getElementById('avatarInput').click()">Change Photo</button>
+                </div>
+                <div class="profile-info-section">
+                    <h1 id="userName">John Doe</h1>
+                    <p class="user-email" id="userEmail">john.doe@example.com</p>
+                    <div class="profile-stats-grid">
+                        <div class="stat-card-profile">
+                            <div class="stat-number-profile" id="userCredits">10</div>
+                            <div class="stat-label-profile">Credits</div>
+                        </div>
+                        <div class="stat-card-profile">
+                            <div class="stat-number-profile" id="userSessions">0</div>
+                            <div class="stat-label-profile">Sessions</div>
+                        </div>
+                        <div class="stat-card-profile">
+                            <div class="stat-number-profile" id="userRating">5.0</div>
+                            <div class="stat-label-profile">Rating</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Content Grid -->
+            <div class="profile-grid-layout">
+                <!-- Left Column: Skills & Interests -->
+                <div class="profile-main-content">
+                    <!-- Skills I Can Teach -->
+                    <section class="profile-card-section">
+                        <div class="card-header-section">
+                            <h2>🎓 Skills I Can Teach</h2>
+                            <button class="btn btn-sm btn-outline" onclick="openEditModal('teach')">Edit</button>
+                        </div>
+                        <div class="skills-display-container" id="teachSkillsContainer">
+                            <p class="empty-message">Add skills you can teach to start matching with learners!</p>
+                        </div>
+                    </section>
+
+                    <!-- Skills I Want to Learn -->
+                    <section class="profile-card-section">
+                        <div class="card-header-section">
+                            <h2>📚 Skills I Want to Learn</h2>
+                            <button class="btn btn-sm btn-outline" onclick="openEditModal('learn')">Edit</button>
+                        </div>
+                        <div class="skills-display-container" id="learnSkillsContainer">
+                            <p class="empty-message">Add skills you want to learn to find perfect teachers!</p>
+                        </div>
+                    </section>
+
+                    <!-- Other Interests -->
+                    <section class="profile-card-section">
+                        <div class="card-header-section">
+                            <h2>💡 Other Interests & Hobbies</h2>
+                            <button class="btn btn-sm btn-outline" onclick="openEditModal('interests')">Edit</button>
+                        </div>
+                        <div class="skills-display-container" id="interestsContainer">
+                            <p class="empty-message">Share your hobbies to connect with like-minded people!</p>
+                        </div>
+                    </section>
+
+                    <!-- AI Matchmaking Section -->
+                    <section class="profile-card-section matchmaking-card">
+                        <div class="card-header-section">
+                            <h2>🔍 AI-Powered Skill Matchmaking</h2>
+                        </div>
+                        
+                        <div class="search-bar-wrapper">
+                            <input 
+                                type="text" 
+                                id="skillSearchInput" 
+                                class="search-input-field" 
+                                placeholder="Search for skills you want to learn... (e.g., Guitar, Python, Spanish)"
+                            >
+                            <button class="btn btn-primary search-button" onclick="searchSkills()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <circle cx="11" cy="11" r="8" stroke-width="2"/>
+                                    <path d="M21 21l-4.35-4.35" stroke-width="2"/>
+                                </svg>
+                                Search
+                            </button>
+                        </div>
+
+                        <div class="filter-buttons-wrapper">
+                            <button class="filter-button active" onclick="filterMatches('all')">All Matches</button>
+                            <button class="filter-button" onclick="filterMatches('best')">Best Match (70%+)</button>
+                            <button class="filter-button" onclick="filterMatches('verified')">Verified Only</button>
+                            <button class="filter-button" onclick="filterMatches('available')">Available Now</button>
+                        </div>
+
+                        <div id="matchesContainer" class="matches-display-container">
+                            <div class="empty-matches-state">
+                                <div class="empty-icon-large">🎯</div>
+                                <h3>Find Your Perfect Learning Match</h3>
+                                <p>Search for any skill above or click "Find All Matches" to see personalized recommendations based on your profile.</p>
+                                <button class="btn btn-primary" onclick="findAllMatches()">Find All Matches</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Column: Quick Actions & Info -->
+                <aside class="profile-sidebar-section">
+                    <div class="sidebar-card-wrapper">
+                        <h3>Quick Actions</h3>
+                        <div class="quick-actions-list">
+                            <button class="action-button" onclick="findAllMatches()">
+                                <span class="action-icon">🎯</span>
+                                <span>Find All Matches</span>
+                            </button>
+                            <button class="action-button" onclick="buyCredits()">
+                                <span class="action-icon">💳</span>
+                                <span>Buy Credits</span>
+                            </button>
+                            <button class="action-button" onclick="viewSessions()">
+                                <span class="action-icon">📅</span>
+                                <span>My Sessions</span>
+                            </button>
+                            <button class="action-button" onclick="openSettings()">
+                                <span class="action-icon">⚙️</span>
+                                <span>Settings</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-card-wrapper">
+                        <h3>💡 Pro Tips</h3>
+                        <ul class="tips-list-items">
+                            <li>Add at least 3 skills to get better matches</li>
+                            <li>Complete sessions to earn more credits</li>
+                            <li>Verified mentors have higher ratings</li>
+                            <li>Be specific when searching for skills</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card-wrapper credit-balance-card">
+                        <h3>Credit Balance</h3>
+                        <div class="credit-display-section">
+                            <span class="credit-amount-display" id="sidebarCredits">10</span>
+                            <span class="credit-label-display">Credits</span>
+                        </div>
+                        <p class="credit-info-text">1 Credit = $1</p>
+                        <button class="btn btn-primary btn-block" onclick="buyCredits()">Add Credits</button>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Edit Skills Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeEditModal()">&times;</button>
+            <div class="modal-header">
+                <h2 id="modalTitle">Edit Skills</h2>
+                <p id="modalDescription">Add or remove skills from your profile</p>
+            </div>
+            <div class="modal-body">
+                <div class="skill-input-wrapper">
+                    <input 
+                        type="text" 
+                        id="skillInput" 
+                        class="skill-input-field" 
+                        placeholder="Type a skill and press Enter"
+                    >
+                    <button class="btn btn-primary" onclick="addSkill()">Add</button>
+                </div>
+                <div id="skillTagsContainer" class="skill-tags-display"></div>
+            </div>
+            <div class="modal-footer-section">
+                <button class="btn btn-outline" onclick="closeEditModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="saveSkills()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
